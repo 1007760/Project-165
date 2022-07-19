@@ -1,5 +1,7 @@
 from tkinter import *
 from PIL import ImageTk, Image
+from tkinter import *
+from PIL import ImageTk, Image
 from tkinter import filedialog
 root = Tk()
 root.geometry("500x500")
@@ -22,10 +24,10 @@ def rotateImage() :
     global img_path
     img1 = Image.open(img_path)
     rotated_img = img1.rotate(90)
-    load_img = ImageTk.PhotoImage(Image.open(rotated_img))
+    load_img = ImageTk.PhotoImage(rotated_img)
     load_img.close()
 
-open_btn = Button(root, text = "Open Image", bg = "teal")
+open_btn = Button(root, text = "Open Image", bg = "teal", command = openimage)
 open_btn.place(relx = 0.5, rely = 0.3, anchor = CENTER)
 rotate_btn = Button(root, text = "Rotate Image", bg = "teal", font = ("MS Gothic", 12), command = rotateImage, relief = SOLID, padx = 15, pady = 10)
 rotate_btn.place(relx = 0.5, rely = 0.85, anchor = CENTER)
